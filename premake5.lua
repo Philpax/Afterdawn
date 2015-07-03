@@ -26,6 +26,7 @@ solution "Afterdawn"
 		includedirs(RerootPaths(VENDOR_INCLUDES))
 		includedirs { "vespertine/include/", "include/" }
 		files { "include/**.hpp", "src/**.cpp" }
+		flags { "NoExceptions", "NoRTTI", "FatalWarnings" }
 
 		sdl2LibDir = RerootPath "vendor/SDL2-2.0.3/lib/x86"
 
