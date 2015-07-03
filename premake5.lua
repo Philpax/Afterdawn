@@ -21,6 +21,7 @@ solution "Afterdawn"
 		kind "ConsoleApp"
 		language "C++"
 		targetdir "bin/%{cfg.buildcfg}"
+		debugdir "bin/%{cfg.buildcfg}"
 
 		includedirs(RerootPaths(VENDOR_INCLUDES))
 		includedirs { "vespertine/include/", "include/" }
