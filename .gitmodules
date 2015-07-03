@@ -1,0 +1,3 @@
+[submodule "vespertine"]
+	path = vespertine
+	url = git@github.com:Philpax/vespertine.git
