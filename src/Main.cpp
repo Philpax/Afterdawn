@@ -2,7 +2,7 @@
 
 int main()
 {
-	vesp::StringPtr gameBuildId = "Afterdawn (" __DATE__ " " __TIME__ ")";
+	auto gameBuildId = "Afterdawn (" __DATE__ " " __TIME__ ")";
 
 	if (!vesp::Initialize(gameBuildId))
 		return 1;
