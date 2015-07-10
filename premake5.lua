@@ -28,13 +28,9 @@ solution "Afterdawn"
 		files { "include/**.hpp", "src/**.cpp" }
 		flags { "NoExceptions", "NoRTTI", "FatalWarnings" }
 
-		sdl2LibDir = RerootPath "vendor/SDL2-2.0.3/lib/x86"
-
-		libdirs { sdl2LibDir }
-		links { "SDL2", "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
+		links { "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
 		postbuildcommands 
 		{ 
-			[[{COPY} %{sdl2LibDir .. "/SDL2.dll"} bin/%{cfg.buildcfg}]],
 			[[{COPY} %{RerootPath "data"} bin/%{cfg.buildcfg}/data]] 
 		}
 
