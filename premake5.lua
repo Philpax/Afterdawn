@@ -18,7 +18,7 @@ solution "Afterdawn"
 	end
 
 	project "Afterdawn"
-		kind "ConsoleApp"
+		kind "WindowedApp"
 		language "C++"
 		targetdir "bin/%{cfg.buildcfg}"
 		debugdir "bin/%{cfg.buildcfg}"
@@ -26,7 +26,7 @@ solution "Afterdawn"
 		includedirs(RerootPaths(VENDOR_INCLUDES))
 		includedirs { "vespertine/include/", "include/" }
 		files { "include/**.hpp", "src/**.cpp" }
-		flags { "NoExceptions", "NoRTTI", "FatalWarnings" }
+		flags { "NoExceptions", "NoRTTI", "FatalWarnings", "WinMain" }
 
 		links { "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
 		postbuildcommands 

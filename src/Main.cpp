@@ -1,6 +1,7 @@
 #include <vesp/Main.hpp>
+#include <Windows.h>
 
-int main()
+int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	auto gameBuildId = "Afterdawn (" __DATE__ " " __TIME__ ")";
 
