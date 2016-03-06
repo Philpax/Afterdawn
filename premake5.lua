@@ -26,7 +26,9 @@ solution "Afterdawn"
 		includedirs(RerootPaths(VENDOR_INCLUDES))
 		includedirs { "vespertine/include/", "include/" }
 		files { "include/**.hpp", "src/**.cpp" }
-		flags { "NoExceptions", "NoRTTI", "FatalWarnings", "WinMain" }
+		flags { "FatalWarnings", "WinMain", "Symbols" }
+		exceptionhandling "Off"
+		rtti "Off"
 
 		links { "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
 		postbuildcommands 
