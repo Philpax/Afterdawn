@@ -1,21 +1,21 @@
+-- Return paths relative to where vespertine is
+function RerootPath(path)
+	return "vespertine/" .. path
+end
+
+function RerootPaths(paths)
+	ret = {}
+	for _, v in pairs(paths) do
+		table.insert(ret, RerootPath(v))
+	end
+	return ret
+end
+
 solution "Afterdawn"
 	configurations { "Debug", "Release" }
 
 	-- Include the vespertine project in this solution
 	include "vespertine/premake5.lua"
-
-	-- Return paths relative to where vespertine is
-	function RerootPath(path)
-		return "vespertine/" .. path
-	end
-
-	function RerootPaths(paths)
-		ret = {}
-		for _, v in pairs(paths) do
-			table.insert(ret, RerootPath(v))
-		end
-		return ret
-	end
 
 	project "Afterdawn"
 		kind "WindowedApp"
@@ -31,6 +31,7 @@ solution "Afterdawn"
 		rtti "Off"
 
 		links { "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
+		links(RerootPaths(VENDOR_LINKS))
 		postbuildcommands 
 		{ 
 			[[{COPY} %{RerootPath "data"} bin/%{cfg.buildcfg}/data]] 
