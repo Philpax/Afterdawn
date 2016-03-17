@@ -14,6 +14,8 @@ end
 solution "Afterdawn"
 	configurations { "Debug", "Release" }
 
+	startproject "Afterdawn"
+
 	-- Include the vespertine project in this solution
 	include "vespertine/premake5.lua"
 
