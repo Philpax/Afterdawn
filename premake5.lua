@@ -48,7 +48,9 @@ solution "Afterdawn"
 			optimize "On"
 
 		configuration { "vs*" }
+			editandcontinue "off"
 			buildoptions { "/EHsc" }
+			ignoredefaultlibraries { "msvcrt.lib" }
 
 		configuration { "gmake" }
 			buildoptions { "-std=c++11" }
