@@ -50,7 +50,7 @@ solution "Afterdawn"
 		configuration { "vs*" }
 			editandcontinue "off"
 			buildoptions { "/EHsc" }
-			ignoredefaultlibraries { "msvcrt.lib" }
+			ignoredefaultlibraries { "msvcrt", "libcmt" }
 
 		configuration { "gmake" }
 			buildoptions { "-std=c++11" }
