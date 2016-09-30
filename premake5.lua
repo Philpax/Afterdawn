@@ -40,7 +40,7 @@ solution "Afterdawn"
 		}
 
 		filter "configurations:Debug"
-			defines { "DEBUG" }
+			defines { "DEBUG", "_ITERATOR_DEBUG_LEVEL=0" }
 			flags { "Symbols" }
 			links(RerootPaths(VENDOR_LINKS.debug))
 			filter { "configurations:Debug", "action:vs*" }
