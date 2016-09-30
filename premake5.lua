@@ -33,7 +33,7 @@ solution "Afterdawn"
 		rtti "Off"
 
 		links { "Vespertine", "dxgi", "d3d11", "d3dcompiler" }
-		links(RerootPaths(VENDOR_LINKS))
+		links(RerootPaths(VENDOR_LINKS.all))
 		postbuildcommands 
 		{ 
 			[[{COPY} %{RerootPath "data"} bin/%{cfg.buildcfg}/data]] 
@@ -42,15 +42,18 @@ solution "Afterdawn"
 		filter "configurations:Debug"
 			defines { "DEBUG" }
 			flags { "Symbols" }
+			links(RerootPaths(VENDOR_LINKS.debug))
+			filter { "configurations:Debug", "action:vs*" }
+				ignoredefaultlibraries { "libcmt" }
 
 		filter "configurations:Release"
 			defines { "NDEBUG" }
 			optimize "On"
+			links(RerootPaths(VENDOR_LINKS.release))
 
 		configuration { "vs*" }
 			editandcontinue "off"
 			buildoptions { "/EHsc" }
-			ignoredefaultlibraries { "msvcrt", "libcmt" }
 
 		configuration { "gmake" }
 			buildoptions { "-std=c++11" }
